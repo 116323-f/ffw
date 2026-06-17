@@ -454,31 +454,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6613fb220f06ded458463dd464007245, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerControls
-  playerControls:
-    m_Name: Player Controls
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 2cd99887-a4d8-4d23-b3cd-ccc33fbcbbde
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 15512532-ba0c-48a9-af2e-b8eb78de21c1
-      m_Path: <Keyboard>/x
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Player Controls
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 1773487b-f1b8-404a-b7f9-24fc2fd1f673
-      m_Path: <Keyboard>/z
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Player Controls
-      m_Flags: 0
-    m_Flags: 0
 --- !u!1 &1094195471
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,6 +465,7 @@ GameObject:
   - component: {fileID: 1094195475}
   - component: {fileID: 1094195474}
   - component: {fileID: 1094195472}
+  - component: {fileID: 1094195476}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -558,6 +534,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1094195476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094195471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6613fb220f06ded458463dd464007245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInput
 --- !u!1 &1240021306
 GameObject:
   m_ObjectHideFlags: 0
