@@ -7,12 +7,12 @@ public class OnMouse : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        print($"New Input System: On Mouse Enter Called On {this.name}!");
+        print($"On Mouse Enter On {this.name}!");
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        print($"New Input System: On Mouse Exit Called On {this.name}!");
+        print($"On Mouse Exit On {this.name}!");
     }
 
     
