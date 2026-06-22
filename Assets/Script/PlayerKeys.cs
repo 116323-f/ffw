@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Xkey : MonoBehaviour
+public class PlayerKeys : MonoBehaviour
 {
     InputAction xAction;
     InputAction zAction;
@@ -18,6 +18,11 @@ public class Xkey : MonoBehaviour
         if (xAction.IsPressed())
         {
             print($"X key Pressed On {this.name}!");
+        }
+
+        if (zAction.IsPressed())
+        {
+            print($"Z key Pressed On {this.name}!");
         }
     }
 }
