@@ -15,14 +15,24 @@ public class PlayerKeys : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (xAction.IsPressed())
+        if (xAction.WasPressedThisFrame())
         {
             print($"X key Pressed On {this.name}!");
         }
 
-        if (zAction.IsPressed())
+        if (xAction.WasReleasedThisFrame())
+        {
+            print($"X key Released On {this.name}!");
+        }
+
+        if (zAction.WasPressedThisFrame())
         {
             print($"Z key Pressed On {this.name}!");
+        }
+
+        if (zAction.WasPressedThisFrame())
+        {
+            print($"Z key Released On {this.name}!");
         }
     }
 }
