@@ -33,7 +33,7 @@ public class OnMouse : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     void Update()
     {
-        while (PointerEntered == true)
+        if (PointerEntered == true)
         {
             if (xAction.WasPressedThisFrame() && xAction.IsPressed())
             {
