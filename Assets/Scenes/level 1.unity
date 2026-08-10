@@ -889,17 +889,55 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440040494}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+  m_Father: {fileID: 449307039}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -156.98697, y: -86.94961}
+  m_SizeDelta: {x: 210.897, y: 116.295}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &449307038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 449307039}
+  m_Layer: 5
+  m_Name: Full Pay Bar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &449307039
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449307038}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 920138412}
+  - {fileID: 440040497}
+  - {fileID: 1585475660}
   m_Father: {fileID: 1765726718}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -304.5928, y: -171.09993}
-  m_SizeDelta: {x: 210.897, y: 116.295}
+  m_AnchoredPosition: {x: -17.43637, y: -6.0486374}
+  m_SizeDelta: {x: 1240.219, y: 337.923}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &481822596
 GameObject:
@@ -1916,16 +1954,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 920138411}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1765726718}
+  m_Father: {fileID: 449307039}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -607.9705, y: -5.90823}
+  m_AnchoredPosition: {x: -460.36465, y: 78.242096}
   m_SizeDelta: {x: 245.727, y: 133.71}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &920138413
@@ -3537,6 +3575,7 @@ GameObject:
   - component: {fileID: 1526479186}
   - component: {fileID: 1526479188}
   - component: {fileID: 1526479189}
+  - component: {fileID: 1526479190}
   m_Layer: 0
   m_Name: Square (3)
   m_TagString: Untagged
@@ -3676,6 +3715,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aad0df0a4b9aad84b846d4440af0ce22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnMouse
+--- !u!114 &1526479190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526479185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06df2e6af9b3ddb43851115036ec31fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PayBar
+  payBarFill: {fileID: 0}
+  payTeller: {fileID: 0}
+  fillSpeed: 0
+  colourGradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 0.8970643, b: 0, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 31611
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 1
+    m_ColorSpace: -1
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
 --- !u!1 &1537868585
 GameObject:
   m_ObjectHideFlags: 0
@@ -4048,18 +4132,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1585475659}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1850978506}
   - {fileID: 996712356}
-  m_Father: {fileID: 1765726718}
+  m_Father: {fileID: 449307039}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0016174316, y: -5.908493}
+  m_AnchoredPosition: {x: 147.60425, y: 78.24183}
   m_SizeDelta: {x: 871.248, y: 133.706}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1607554797
@@ -4674,15 +4758,13 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 920138412}
-  - {fileID: 440040497}
   - {fileID: 404954649}
   - {fileID: 1537868586}
   - {fileID: 481822597}
   - {fileID: 2018368211}
   - {fileID: 1302522653}
   - {fileID: 1648974818}
-  - {fileID: 1585475660}
+  - {fileID: 449307039}
   - {fileID: 926123032}
   - {fileID: 1904941022}
   m_Father: {fileID: 0}
@@ -4769,7 +4851,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PayBar
   payBarFill: {fileID: 996712357}
   payTeller: {fileID: 440040495}
-  fillSpeed: 0.7
+  fillSpeed: 0.5
   colourGradient:
     serializedVersion: 2
     key0: {r: 1, g: 0.25098038, b: 0.2734422, a: 1}
@@ -5555,9 +5637,9 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1240021310}
-  - {fileID: 904518140}
   - {fileID: 1526479187}
-  - {fileID: 10711515}
   - {fileID: 1377937552}
+  - {fileID: 10711515}
+  - {fileID: 904518140}
   - {fileID: 1094195475}
   - {fileID: 1765726718}
