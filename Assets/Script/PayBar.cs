@@ -13,6 +13,7 @@ public class PayBar : MonoBehaviour
     [SerializeField] private Image payBarFill;
     [SerializeField] private TextMeshProUGUI payTeller;
     [SerializeField] private float fillSpeed;
+    [SerializeField] private Gradient colourGradient;
     
     void Start()
     {
@@ -36,8 +37,8 @@ public class PayBar : MonoBehaviour
         //fill amount ranges from 0-1 so must divide to reach normalised value
         float targetFillAmount = currentPay / maxPay;
         //set fill amount of fill image to target value
-        payBarFill.fillAmount = targetFillAmount;
         payBarFill.DOFillAmount(targetFillAmount, fillSpeed);
+        payBarFill.DOColor(colourGradient.Evaluate(targetFillAmount), fillSpeed);
     }
 
 
