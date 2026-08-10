@@ -36,7 +36,7 @@ public class StitchBar : MonoBehaviour
         //fill amount ranges from 0-1 so must divide to reach normalised value
         float targetFillAmount = currentPay / maxPay;
         //set fill amount of fill image to target value
-        DG.Tweening.Core.TweenerCore<float, float, DG.Tweening.Plugins.Options.FloatOptions> tweenerCore = payBarFill.DOFloat(targetFillAmount, fillSpeed);
+        //payBarFill.DOFloat(targetFillAmount, fillSpeed);
         payBarFill.GetComponent<Renderer>().material.DOColor(colourGradient.Evaluate(targetFillAmount), fillSpeed);
     }
 }
