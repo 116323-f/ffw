@@ -493,7 +493,7 @@ GameObject:
   - component: {fileID: 292888923}
   - component: {fileID: 292888926}
   - component: {fileID: 292888925}
-  - component: {fileID: 292888924}
+  - component: {fileID: 292888927}
   m_Layer: 0
   m_Name: Release Button
   m_TagString: Untagged
@@ -516,18 +516,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 841711128}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &292888924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 292888922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aad0df0a4b9aad84b846d4440af0ce22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::OnMouse
 --- !u!61 &292888925
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -633,6 +621,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &292888927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292888922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1e0f910cac83fe4e94eaa3fe3e06671, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ReleaseButton
 --- !u!1 &308604370
 GameObject:
   m_ObjectHideFlags: 0
@@ -1903,8 +1903,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1120953251}
-  - {fileID: 1526479187}
   - {fileID: 292888923}
+  - {fileID: 1526479187}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &904518137
@@ -2898,7 +2898,7 @@ GameObject:
   - component: {fileID: 1120953251}
   - component: {fileID: 1120953254}
   - component: {fileID: 1120953253}
-  - component: {fileID: 1120953252}
+  - component: {fileID: 1120953255}
   m_Layer: 0
   m_Name: Press Button
   m_TagString: Untagged
@@ -2921,18 +2921,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 841711128}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1120953252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120953250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aad0df0a4b9aad84b846d4440af0ce22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::OnMouse
 --- !u!61 &1120953253
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3038,6 +3026,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1120953255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120953250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0de8f5ee50aee0a4384751716175d630, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PressButton
 --- !u!1 &1171114096
 GameObject:
   m_ObjectHideFlags: 0
@@ -3963,8 +3963,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1144827683
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
@@ -4047,9 +4047,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1526479185}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aad0df0a4b9aad84b846d4440af0ce22, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a76a72d4cee3f940b7c6ad5b0fe1657, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::OnMouse
+  m_EditorClassIdentifier: Assembly-CSharp::Hold
 --- !u!1 &1537868585
 GameObject:
   m_ObjectHideFlags: 0
