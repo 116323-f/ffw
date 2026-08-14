@@ -59,6 +59,42 @@
                     "processors": "",
                     "interactions": "Press(behavior=2)",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "XHold",
+                    "type": "Button",
+                    "id": "1d70bd0c-fe0a-487d-aa64-dc2fa40a696d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Hold",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "XPress",
+                    "type": "Button",
+                    "id": "d50d0179-5e3e-4b71-a383-4cd85a1cb42e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "XRelease",
+                    "type": "Button",
+                    "id": "e01f30cd-6ace-4bdf-8e83-18ad0f828814",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press(behavior=1)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "XPressHoldRelease",
+                    "type": "Button",
+                    "id": "a1c04734-9a7f-4938-83d3-843b4714fc00",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press,Hold,Press(behavior=1)",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -191,6 +227,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "Xkey",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8462ab0d-f7f6-4d74-94ca-b2a556f35e25",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "XHold",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "237eefa6-5aa4-40ac-8816-e241b6b0f1cf",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "XPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1a21d181-b385-4069-be51-f001c3420cca",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "XRelease",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f051f81f-86c3-4dcf-b079-c52d4d3e1860",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "XPressHoldRelease",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

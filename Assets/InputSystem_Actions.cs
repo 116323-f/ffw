@@ -145,6 +145,42 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": ""Press(behavior=2)"",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""XHold"",
+                    ""type"": ""Button"",
+                    ""id"": ""1d70bd0c-fe0a-487d-aa64-dc2fa40a696d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": ""Hold"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""XPress"",
+                    ""type"": ""Button"",
+                    ""id"": ""d50d0179-5e3e-4b71-a383-4cd85a1cb42e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""XRelease"",
+                    ""type"": ""Button"",
+                    ""id"": ""e01f30cd-6ace-4bdf-8e83-18ad0f828814"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=1)"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""XPressHoldRelease"",
+                    ""type"": ""Button"",
+                    ""id"": ""a1c04734-9a7f-4938-83d3-843b4714fc00"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": ""Press,Hold,Press(behavior=1)"",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -277,6 +313,50 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Xkey"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8462ab0d-f7f6-4d74-94ca-b2a556f35e25"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""XHold"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""237eefa6-5aa4-40ac-8816-e241b6b0f1cf"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""XPress"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1a21d181-b385-4069-be51-f001c3420cca"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""XRelease"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f051f81f-86c3-4dcf-b079-c52d4d3e1860"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""XPressHoldRelease"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -870,6 +950,10 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_Next = m_Player.FindAction("Next", throwIfNotFound: true);
         m_Player_Zkey = m_Player.FindAction("Zkey", throwIfNotFound: true);
         m_Player_Xkey = m_Player.FindAction("Xkey", throwIfNotFound: true);
+        m_Player_XHold = m_Player.FindAction("XHold", throwIfNotFound: true);
+        m_Player_XPress = m_Player.FindAction("XPress", throwIfNotFound: true);
+        m_Player_XRelease = m_Player.FindAction("XRelease", throwIfNotFound: true);
+        m_Player_XPressHoldRelease = m_Player.FindAction("XPressHoldRelease", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -969,6 +1053,10 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Next;
     private readonly InputAction m_Player_Zkey;
     private readonly InputAction m_Player_Xkey;
+    private readonly InputAction m_Player_XHold;
+    private readonly InputAction m_Player_XPress;
+    private readonly InputAction m_Player_XRelease;
+    private readonly InputAction m_Player_XPressHoldRelease;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1004,6 +1092,22 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/Xkey".
         /// </summary>
         public InputAction @Xkey => m_Wrapper.m_Player_Xkey;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/XHold".
+        /// </summary>
+        public InputAction @XHold => m_Wrapper.m_Player_XHold;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/XPress".
+        /// </summary>
+        public InputAction @XPress => m_Wrapper.m_Player_XPress;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/XRelease".
+        /// </summary>
+        public InputAction @XRelease => m_Wrapper.m_Player_XRelease;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/XPressHoldRelease".
+        /// </summary>
+        public InputAction @XPressHoldRelease => m_Wrapper.m_Player_XPressHoldRelease;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1048,6 +1152,18 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Xkey.started += instance.OnXkey;
             @Xkey.performed += instance.OnXkey;
             @Xkey.canceled += instance.OnXkey;
+            @XHold.started += instance.OnXHold;
+            @XHold.performed += instance.OnXHold;
+            @XHold.canceled += instance.OnXHold;
+            @XPress.started += instance.OnXPress;
+            @XPress.performed += instance.OnXPress;
+            @XPress.canceled += instance.OnXPress;
+            @XRelease.started += instance.OnXRelease;
+            @XRelease.performed += instance.OnXRelease;
+            @XRelease.canceled += instance.OnXRelease;
+            @XPressHoldRelease.started += instance.OnXPressHoldRelease;
+            @XPressHoldRelease.performed += instance.OnXPressHoldRelease;
+            @XPressHoldRelease.canceled += instance.OnXPressHoldRelease;
         }
 
         /// <summary>
@@ -1077,6 +1193,18 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Xkey.started -= instance.OnXkey;
             @Xkey.performed -= instance.OnXkey;
             @Xkey.canceled -= instance.OnXkey;
+            @XHold.started -= instance.OnXHold;
+            @XHold.performed -= instance.OnXHold;
+            @XHold.canceled -= instance.OnXHold;
+            @XPress.started -= instance.OnXPress;
+            @XPress.performed -= instance.OnXPress;
+            @XPress.canceled -= instance.OnXPress;
+            @XRelease.started -= instance.OnXRelease;
+            @XRelease.performed -= instance.OnXRelease;
+            @XRelease.canceled -= instance.OnXRelease;
+            @XPressHoldRelease.started -= instance.OnXPressHoldRelease;
+            @XPressHoldRelease.performed -= instance.OnXPressHoldRelease;
+            @XPressHoldRelease.canceled -= instance.OnXPressHoldRelease;
         }
 
         /// <summary>
@@ -1419,6 +1547,34 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnXkey(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "XHold" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnXHold(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "XPress" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnXPress(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "XRelease" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnXRelease(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "XPressHoldRelease" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnXPressHoldRelease(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.
