@@ -7,11 +7,14 @@ public class PressButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     InputAction xAction;
     InputAction zAction;
     private bool PointerEntered = false;
+    [SerializeField] private Color pressedColor = Color.red;
+    private SpriteRenderer spriteRenderer;
 
     private void Start()
     {
         xAction = InputSystem.actions.FindAction("Xkey");
         zAction = InputSystem.actions.FindAction("Zkey");
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     //method status and name(what the method contains)
@@ -37,11 +40,13 @@ public class PressButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             if (xAction.WasPressedThisFrame() && xAction.IsPressed())
             {
                 print($"X key properly Pressed On {this.name}!");
+                spriteRenderer.color = pressedColor;
             }
 
             if (zAction.WasPressedThisFrame() && zAction.IsPressed())
             {
                 print($"Z key properly Pressed On {this.name}!");
+                spriteRenderer.color = pressedColor;
             }
 
         }

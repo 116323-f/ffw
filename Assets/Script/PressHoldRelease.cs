@@ -7,8 +7,8 @@ public class PressHoldRelease : MonoBehaviour
     InputAction XPressHoldRelease;
     private bool PointerEntered = false;
     //[SerializeField] private GameObject Press;
-    [SerializeField] private GameObject Hold;
-    [SerializeField] private GameObject Release;
+    [SerializeField] private SpriteRenderer Hold;
+    [SerializeField] private SpriteRenderer Release;
     [SerializeField] private InputActionReference actionReference;
     [SerializeField] private SpriteRenderer Press;
 
@@ -31,7 +31,7 @@ public class PressHoldRelease : MonoBehaviour
         Press = GetComponent<SpriteRenderer>();
         XPressHoldRelease = InputSystem.actions.FindAction("Xkey");
         if (!(actionReference.action.interactions.Contains("Press") && actionReference.action.interactions.
-        Contains("Hold")))
+        Contains("Hold") && actionReference.action.interactions.Contains("Release")))
         {
             return;
         }
@@ -40,17 +40,22 @@ public class PressHoldRelease : MonoBehaviour
         {
             if (context.interaction is PressInteraction)
             {
-                Press.color = pressed;
+                Press.material.color = pressed;
+                print($"Pressed");
+            }
+
+            else if (context.interaction is HoldInteraction)
+            {
+                Hold.color = held;
+                print($"Held");
+            }
+
+            else if (context.interaction is HoldInteraction)
+            {
+                Release.color = released;
+                print($"Released");
             }
         };
-        //else if (context.interaction is HoldInteraction)
-        //{
-        //    Hold.color = held;
-        //}
-
-        //else if (context.interaction is HoldInteraction)
-        //{
-        //    Release.color = released;
     }
 }
             

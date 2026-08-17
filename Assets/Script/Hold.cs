@@ -7,11 +7,17 @@ public class Hold : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     InputAction xAction;
     InputAction zAction;
     private bool PointerEntered = false;
+    [SerializeField] private Color pressedColor = Color.red;
+
+    private SpriteRenderer spriteRenderer;
+    private Color originalColor;
 
     private void Start()
     {
         xAction = InputSystem.actions.FindAction("Xkey");
         zAction = InputSystem.actions.FindAction("Zkey");
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        originalColor = spriteRenderer.color;
     }
 
     //method status and name(what the method contains)
@@ -37,11 +43,13 @@ public class Hold : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             if (xAction.IsPressed())
             {
                 print($"X key properly Pressed On {this.name}!");
+                spriteRenderer.color = pressedColor;
             }
 
             else if (xAction.WasReleasedThisFrame())
             {
                 print($"X key properly released On {this.name}!");
+                spriteRenderer.color = originalColor;
             }
 
             if (zAction.IsPressed())
@@ -56,5 +64,6 @@ public class Hold : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         }
 
     }
+
 
 }
