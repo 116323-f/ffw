@@ -17,7 +17,6 @@ public class PayBar : MonoBehaviour
     
     void Start()
     {
-        currentPay = maxPay;
         payTeller.text = "$" + currentPay;
     }
 

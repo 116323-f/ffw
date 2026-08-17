@@ -5,7 +5,7 @@ using UnityEngine.InputSystem.Interactions;
 public class PressHoldRelease : MonoBehaviour
 {
     InputAction XPressHoldRelease;
-    private bool PointerEntered = false;
+    //private bool PointerEntered = false;
     //[SerializeField] private GameObject Press;
     [SerializeField] private SpriteRenderer Hold;
     [SerializeField] private SpriteRenderer Release;

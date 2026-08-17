@@ -482,20 +482,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 57590139}
   m_CullTransparentMesh: 1
---- !u!114 &181632582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
-  m_Name: Player/XPressHoldRelease
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
-  m_Asset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  m_ActionId: a1c04734-9a7f-4938-83d3-843b4714fc00
 --- !u!1 &292888922
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,6 +633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e0f910cac83fe4e94eaa3fe3e06671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReleaseButton
+  releasedColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &308604370
 GameObject:
   m_ObjectHideFlags: 0
@@ -1896,6 +1883,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 841711128}
+  - component: {fileID: 841711129}
   m_Layer: 0
   m_Name: Stitch
   m_TagString: Untagged
@@ -1921,6 +1909,22 @@ Transform:
   - {fileID: 1526479187}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &841711129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841711127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee45fb68781bc348814e5edcf73a6f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PressHoldRelease
+  Hold: {fileID: 1526479186}
+  Release: {fileID: 292888926}
+  actionReference: {fileID: 937902232}
+  Press: {fileID: 1120953254}
 --- !u!1 &904518137
 GameObject:
   m_ObjectHideFlags: 0
@@ -2398,6 +2402,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 926123031}
   m_CullTransparentMesh: 1
+--- !u!114 &937902232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: Player/XPressHoldRelease
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
+  m_Asset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_ActionId: a1c04734-9a7f-4938-83d3-843b4714fc00
 --- !u!1 &956536601
 GameObject:
   m_ObjectHideFlags: 0
@@ -2913,7 +2931,6 @@ GameObject:
   - component: {fileID: 1120953254}
   - component: {fileID: 1120953253}
   - component: {fileID: 1120953255}
-  - component: {fileID: 1120953256}
   m_Layer: 0
   m_Name: Press Button
   m_TagString: Untagged
@@ -3048,27 +3065,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1120953250}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0de8f5ee50aee0a4384751716175d630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PressButton
---- !u!114 &1120953256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120953250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ee45fb68781bc348814e5edcf73a6f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PressHoldRelease
-  Hold: {fileID: 0}
-  Release: {fileID: 0}
-  actionReference: {fileID: 181632582}
-  Press: {fileID: 1120953254}
+  pressedColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &1171114096
 GameObject:
   m_ObjectHideFlags: 0
@@ -4081,6 +4083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a76a72d4cee3f940b7c6ad5b0fe1657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Hold
+  pressedColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &1537868585
 GameObject:
   m_ObjectHideFlags: 0
