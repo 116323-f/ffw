@@ -6,40 +6,89 @@ using DG.Tweening;
 
 public class HoldColour : MonoBehaviour
 {
-    //private float maxPay = 20;
-    //private float currentPay = 0;
-
-    //[SerializeField] so able to assign through inspector panel
-    //hold fill image
-    [SerializeField] private Image payBarFill;
+    InputAction xAction;
+    InputAction zAction;
+    private bool PointerEntered = false;
+    [SerializeField] private Transform payBarFill;
     [SerializeField] private float fillSpeed;
     [SerializeField] private Gradient colourGradient;
-
-    void Start()
+    private SpriteRenderer spriteRenderer;
+    private void Start()
     {
-        //currentPay = maxPay;
+        xAction = InputSystem.actions.FindAction("Xkey");
+        zAction = InputSystem.actions.FindAction("Zkey");
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        originalColor = spriteRenderer.color;
     }
 
-    //update pay and pay teller to match real amount
-    public void UpdatePay(float amount)
+    //method status and name(what the method contains)
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        //currentPay += amount;
+        //what the method does
 
-        ////set minimum to 0 and maximum to max pay
+        print($"On Mouse Enter On {this.name}!");
+        PointerEntered = true;
 
-        //currentPay = Mathf.Clamp(currentPay, 0f, maxPay);
-        UpdatePayBar();
     }
 
-    //Change fill amount value of fill image
-    private void UpdatePayBar()
+    public void OnPointerExit(PointerEventData eventData)
     {
-        //fill amount ranges from 0-1 so must divide to reach normalised value
-
-        //float targetFillAmount = currentPay / maxPay;
-
-        //set fill amount of fill image to target value
-        //payBarFill.DOFillAmount(targetFillAmount, fillSpeed);
-        //payBarFill.DOColor(colourGradient.Evaluate(targetFillAmount), fillSpeed);
+        print($"On Mouse Exit On {this.name}!");
+        PointerEntered = false;
     }
+
+        public void UpdatePay (PointerEventData eventData)
+    {
+        //gradient to follow cursor
+        //need to make mouse position between a set value (e.g. 0-1) which is then followed by gradient
+        //now how do i possibly do that
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        float left = sr.localBounds.min.x;
+        float right = sr.localBounds.max.x;
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.value);
+        Vector2 direction = (mousePos - transform.position).normalized;
+        currentPay = direction;
+
+        //set minimum to 0 and maximum to max pay
+        currentPay = Mathf.Clamp(left, 0f, right);
+        Update();
+    }
+
+    void Update()
+    {
+        if (PointerEntered == true)
+        {
+            if (xAction.IsPressed())
+            {
+                print($"X key properly Pressed On {this.name}!");
+                float targetFillAmount = currentPay / maxPay;
+                //set fill amount of fill image to target value
+
+                //while doing this, gradient follows cursor
+                payBarFill.DOFillAmount(targetFillAmount, fillSpeed);
+                payBarFill.DOColor(colourGradient.Evaluate(targetFillAmount), fillSpeed);
+
+            }
+
+            else if (xAction.WasReleasedThisFrame())
+            {
+                print($"X key properly released On {this.name}!");
+
+            }
+
+            if (zAction.IsPressed())
+            {
+                print($"Z key properly Pressed On {this.name}!");
+            }
+
+            else if (zAction.WasReleasedThisFrame())
+            {
+                print($"Z key properly released On {this.name}!");
+            }
+        }
+
+        
+
+    }
+
 }
