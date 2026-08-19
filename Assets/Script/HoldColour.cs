@@ -1,10 +1,9 @@
-using System;
-using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 using DG.Tweening;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
-public class HoldColour : MonoBehaviour
+public class HoldColour : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     InputAction xAction;
     InputAction zAction;
@@ -13,12 +12,12 @@ public class HoldColour : MonoBehaviour
     [SerializeField] private float fillSpeed;
     [SerializeField] private Gradient colourGradient;
     private SpriteRenderer spriteRenderer;
+    private float mouseLog = 0;
     private void Start()
     {
         xAction = InputSystem.actions.FindAction("Xkey");
         zAction = InputSystem.actions.FindAction("Zkey");
         spriteRenderer = GetComponent<SpriteRenderer>();
-        originalColor = spriteRenderer.color;
     }
 
     //method status and name(what the method contains)
@@ -40,17 +39,22 @@ public class HoldColour : MonoBehaviour
         public void UpdatePay (PointerEventData eventData)
     {
         //gradient to follow cursor
-        //need to make mouse position between a set value (e.g. 0-1) which is then followed by gradient
+        //need to convert mouse position to between a set value (e.g. 0-1) then using that value, implement a gradient
+        //e.g. while mouse goes from 0 to 0.5, the gradient will follow from 0 to 0.5 as well
         //now how do i possibly do that
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        float left = sr.localBounds.min.x;
-        float right = sr.localBounds.max.x;
+
+        //try to find mouse coord
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.value);
         Vector2 direction = (mousePos - transform.position).normalized;
-        currentPay = direction;
 
-        //set minimum to 0 and maximum to max pay
-        currentPay = Mathf.Clamp(left, 0f, right);
+        //convert mouse coord to float
+
+        //fix mouse coord to inside shape
+        float left = sr.localBounds.min.x;
+        float right = sr.localBounds.max.x;
+        mouseLog = Mathf.Clamp(left, 0f, right);
+
         Update();
     }
 
@@ -61,10 +65,9 @@ public class HoldColour : MonoBehaviour
             if (xAction.IsPressed())
             {
                 print($"X key properly Pressed On {this.name}!");
+                
+                //set gradient to follow mouse coord
                 float targetFillAmount = currentPay / maxPay;
-                //set fill amount of fill image to target value
-
-                //while doing this, gradient follows cursor
                 payBarFill.DOFillAmount(targetFillAmount, fillSpeed);
                 payBarFill.DOColor(colourGradient.Evaluate(targetFillAmount), fillSpeed);
 
