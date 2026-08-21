@@ -44,11 +44,13 @@ public class HoldColour : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         //now how do i possibly do that
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
 
-        //try to find mouse coord
+        // find mouse coord
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.value);
         Vector2 direction = (mousePos - transform.position).normalized;
+        print($"Current mouse position: " + mousePos);
 
         //convert mouse coord to float
+        mouseLog = () / 1000;
 
         //fix mouse coord to inside shape
         float left = sr.localBounds.min.x;
@@ -60,6 +62,7 @@ public class HoldColour : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     void Update()
     {
+
         if (PointerEntered == true)
         {
             if (xAction.IsPressed())
@@ -67,9 +70,10 @@ public class HoldColour : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
                 print($"X key properly Pressed On {this.name}!");
                 
                 //set gradient to follow mouse coord
-                float targetFillAmount = currentPay / maxPay;
-                payBarFill.DOFillAmount(targetFillAmount, fillSpeed);
-                payBarFill.DOColor(colourGradient.Evaluate(targetFillAmount), fillSpeed);
+                
+                //float targetFillAmount = currentPay / maxPay;
+                //payBarFill.DOFillAmount(targetFillAmount, fillSpeed);
+                //payBarFill.DOColor(colourGradient.Evaluate(targetFillAmount), fillSpeed);
 
             }
 
@@ -88,9 +92,9 @@ public class HoldColour : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             {
                 print($"Z key properly released On {this.name}!");
             }
+
         }
 
-        
 
     }
 
