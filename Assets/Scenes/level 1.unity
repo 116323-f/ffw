@@ -1896,8 +1896,8 @@ Transform:
   m_Children:
   - {fileID: 890239752}
   - {fileID: 676609397}
-  - {fileID: 1646778513}
   - {fileID: 1526479187}
+  - {fileID: 1646778513}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &841711129
@@ -3983,7 +3983,6 @@ GameObject:
   - component: {fileID: 1526479186}
   - component: {fileID: 1526479188}
   - component: {fileID: 1526479189}
-  - component: {fileID: 1526479190}
   m_Layer: 0
   m_Name: Hold
   m_TagString: Untagged
@@ -4038,7 +4037,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -1144827683
   m_SortingLayer: -1
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4118,24 +4117,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1526479185}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a76a72d4cee3f940b7c6ad5b0fe1657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Hold
   pressedColor: {r: 1, g: 0, b: 0, a: 1}
---- !u!114 &1526479190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1526479185}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c9513ef9fec2af43977370ee0b333bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MouseProgressBar
 --- !u!1 &1537868585
 GameObject:
   m_ObjectHideFlags: 0
@@ -4760,8 +4747,6 @@ GameObject:
   - component: {fileID: 1646778513}
   - component: {fileID: 1646778517}
   - component: {fileID: 1646778516}
-  - component: {fileID: 1646778515}
-  - component: {fileID: 1646778514}
   m_Layer: 0
   m_Name: Hold (1)
   m_TagString: Untagged
@@ -4784,31 +4769,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 841711128}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1646778514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1646778512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c9513ef9fec2af43977370ee0b333bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MouseProgressBar
---- !u!114 &1646778515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1646778512}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a76a72d4cee3f940b7c6ad5b0fe1657, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Hold
-  pressedColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!61 &1646778516
 BoxCollider2D:
   m_ObjectHideFlags: 0

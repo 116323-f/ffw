@@ -7,6 +7,8 @@ public class Hold : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     InputAction xAction;
     InputAction zAction;
     private bool PointerEntered = false;
+    private bool Hit = false;
+    public int HitCounter = 0;
     [SerializeField] private Color pressedColor = Color.red;
 
     private SpriteRenderer spriteRenderer;
@@ -44,24 +46,46 @@ public class Hold : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             {
                 print($"X key properly Pressed On {this.name}!");
                 spriteRenderer.color = pressedColor;
+                Hit = true;
+                ProperlyHit();
             }
 
             else if (xAction.WasReleasedThisFrame())
             {
-                print($"X key properly released On {this.name}!");
+                print($"X key released On {this.name}!");
                 spriteRenderer.color = originalColor;
+                Hit = false;
+                NotProperlyHit();
             }
 
             if (zAction.IsPressed())
             {
                 print($"Z key properly Pressed On {this.name}!");
+                Hit = true;
+                ProperlyHit();
             }
 
             else if (zAction.WasReleasedThisFrame())
             {
-                print($"Z key properly released On {this.name}!");
+                print($"Z key released On {this.name}!");
+                Hit = false;
+                NotProperlyHit();
             }
         }
+    }
+
+    private double ProperlyHit()
+    {
+        while (Hit == true)
+        {
+            HitCounter ++ 1;
+
+            return HitCounter;
+        }
+    }
+
+    private void NotProperlyHit()
+    {
 
     }
 
