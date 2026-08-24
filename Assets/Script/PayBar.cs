@@ -21,6 +21,7 @@ public class PayBar : MonoBehaviour
     }
 
     //update pay and pay teller to match real amount
+    // void = return nothing
     public void UpdatePay (float amount)
     {
         currentPay += amount;
