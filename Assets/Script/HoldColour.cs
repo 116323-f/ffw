@@ -1,4 +1,6 @@
 using DG.Tweening;
+using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -49,15 +51,16 @@ public class HoldColour : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         Vector2 direction = (mousePos - transform.position).normalized;
         print($"Current mouse position: " + mousePos);
 
-        //convert mouse coord to float
-        mouseLog = () / 1000;
-
         //fix mouse coord to inside shape
         float left = sr.localBounds.min.x;
         float right = sr.localBounds.max.x;
         mouseLog = Mathf.Clamp(left, 0f, right);
 
-        Update();
+        //convert mouse coord to float
+        float mouseX = Mathf.Clamp(mousePos.x, left, right);
+        float targetFillAmount = Mathf.InverseLerp(left, right, mouseX);
+
+        print($"Mouse gradient {targetFillAmount}");
     }
 
     void Update()
@@ -68,9 +71,9 @@ public class HoldColour : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             if (xAction.IsPressed())
             {
                 print($"X key properly Pressed On {this.name}!");
-                
+
                 //set gradient to follow mouse coord
-                
+
                 //float targetFillAmount = currentPay / maxPay;
                 //payBarFill.DOFillAmount(targetFillAmount, fillSpeed);
                 //payBarFill.DOColor(colourGradient.Evaluate(targetFillAmount), fillSpeed);
