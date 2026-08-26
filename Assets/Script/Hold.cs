@@ -81,6 +81,8 @@ public class Hold : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             HitCounter ++ ;
             print($"HitCounter: " + HitCounter);
 
+            return;
+
         }
     }
 
