@@ -74,13 +74,13 @@ public class Hold : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         }
     }
 
-    private double ProperlyHit()
+    private void ProperlyHit()
     {
         while (Hit == true)
         {
-            HitCounter ++ 1;
+            HitCounter ++ ;
+            print($"HitCounter: " + HitCounter);
 
-            return HitCounter;
         }
     }
 
