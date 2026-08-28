@@ -74,6 +74,7 @@ public class Hold : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         }
     }
 
+    //count up hitcounter by seconds held and convert this into pay 
     private void ProperlyHit()
     {
         while (Hit == true)
@@ -86,9 +87,11 @@ public class Hold : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         }
     }
 
+    //stop hitcounter and set note to null so its unable to be pressed any longer.
+    //make sure to only set this for that single note missed
     private void NotProperlyHit()
     {
-
+        
     }
 
 
