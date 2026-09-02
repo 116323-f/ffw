@@ -627,6 +627,135 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 308604370}
   m_CullTransparentMesh: 1
+--- !u!1 &331446389
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 331446391}
+  - component: {fileID: 331446390}
+  m_Layer: 0
+  m_Name: Audio Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &331446390
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331446389}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 5b5ea7b96fd6cc4469bb6af97bef2121, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &331446391
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331446389}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1240021310}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &404954648
 GameObject:
   m_ObjectHideFlags: 0
@@ -1523,7 +1652,7 @@ GameObject:
   - component: {fileID: 676609399}
   - component: {fileID: 676609398}
   m_Layer: 0
-  m_Name: Release Button
+  m_Name: Release
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1556,7 +1685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e0f910cac83fe4e94eaa3fe3e06671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReleaseButton
-  releasedColor: {r: 1, g: 0, b: 0, a: 1}
+  releasedColour: {r: 0, g: 0, b: 0, a: 0}
 --- !u!58 &676609399
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1909,13 +2038,60 @@ MonoBehaviour:
   m_GameObject: {fileID: 841711127}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ee45fb68781bc348814e5edcf73a6f3, type: 3}
+  m_Script: {fileID: 11500000, guid: c067f3b7ae9c6bd4f80ab58c41dddb27, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PressHoldRelease
-  Hold: {fileID: 1526479186}
-  Release: {fileID: 0}
-  actionReference: {fileID: 937902232}
-  Press: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::BeatManager
+  bpm: 160
+  audioSource: {fileID: 331446390}
+  intervals:
+  - steps: 0
+    trigger:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 890239754}
+          m_TargetAssemblyTypeName: UnityEngine.CircleCollider2D, UnityEngine
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - steps: 0
+    trigger:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 676609399}
+          m_TargetAssemblyTypeName: UnityEngine.CircleCollider2D, UnityEngine
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - steps: 0
+    trigger:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1526479188}
+          m_TargetAssemblyTypeName: UnityEngine.BoxCollider2D, UnityEngine
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &890239751
 GameObject:
   m_ObjectHideFlags: 0
@@ -1928,8 +2104,9 @@ GameObject:
   - component: {fileID: 890239755}
   - component: {fileID: 890239754}
   - component: {fileID: 890239753}
+  - component: {fileID: 890239756}
   m_Layer: 0
-  m_Name: Press Button
+  m_Name: Press
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1962,7 +2139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0de8f5ee50aee0a4384751716175d630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PressButton
-  pressedColor: {r: 1, g: 0, b: 0, a: 1}
+  pressedColour: {r: 0, g: 0, b: 0, a: 0}
 --- !u!58 &890239754
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2058,6 +2235,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &890239756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890239751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 481f722d69abf4045ba5581a6ece38f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Accuracy
 --- !u!1 &904518137
 GameObject:
   m_ObjectHideFlags: 0
@@ -2535,20 +2724,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 926123031}
   m_CullTransparentMesh: 1
---- !u!114 &937902232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
-  m_Name: Player/XPressHoldRelease
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
-  m_Asset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  m_ActionId: a1c04734-9a7f-4938-83d3-843b4714fc00
 --- !u!1 &956536601
 GameObject:
   m_ObjectHideFlags: 0
@@ -3251,8 +3426,6 @@ GameObject:
   - component: {fileID: 1240021308}
   - component: {fileID: 1240021307}
   - component: {fileID: 1240021311}
-  - component: {fileID: 1240021312}
-  - component: {fileID: 1240021313}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3375,7 +3548,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 331446391}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1240021311
@@ -3394,62 +3568,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_MaxRayIntersections: 0
---- !u!114 &1240021312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1240021306}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 940a53e852c07974f8751ef752934631, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Test
---- !u!114 &1240021313
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1240021306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fec957127f234240b66dbbfb01ff9a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HoldColour
-  payBarFill: {fileID: 0}
-  fillSpeed: 0
-  colourGradient:
-    serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
-    key2: {r: 0, g: 0, b: 0, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 65535
-    ctime2: 0
-    ctime3: 0
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_ColorSpace: -1
-    m_NumColorKeys: 2
-    m_NumAlphaKeys: 2
 --- !u!1 &1302522652 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3403438661801939030, guid: c49a04b3faf8e9c4cbd4146eeb72f2f4, type: 3}
@@ -4122,7 +4240,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a76a72d4cee3f940b7c6ad5b0fe1657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Hold
-  pressedColor: {r: 1, g: 0, b: 0, a: 1}
+  HitCounter: 0
+  pressedColour: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1537868585
 GameObject:
   m_ObjectHideFlags: 0
