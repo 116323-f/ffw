@@ -9,17 +9,17 @@ public class Hold : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     private bool PointerEntered = false;
     private bool Hit = false;
     public int HitCounter = 0;
-    [SerializeField] private Color pressedColor = Color.red;
+    [SerializeField] private Color pressedColour;
 
     private SpriteRenderer spriteRenderer;
-    private Color originalColor;
+    private Color originalColour;
 
     private void Start()
     {
         xAction = InputSystem.actions.FindAction("Xkey");
         zAction = InputSystem.actions.FindAction("Zkey");
         spriteRenderer = GetComponent<SpriteRenderer>();
-        originalColor = spriteRenderer.color;
+        originalColour = spriteRenderer.color;
     }
 
     //method status and name(what the method contains)
@@ -28,8 +28,14 @@ public class Hold : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         //what the method does
 
         print($"On Mouse Enter On {this.name}!");
-        PointerEntered = true;
+        PointerEntered = false;
 
+    }
+
+    public void OnPointerStay(PointerEventData eventData)
+    {
+        print($"On Mouse Stay On {this.name}");
+        PointerEntered = true;
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -45,7 +51,7 @@ public class Hold : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             if (xAction.IsPressed())
             {
                 print($"X key properly Pressed On {this.name}!");
-                spriteRenderer.color = pressedColor;
+                spriteRenderer.color = pressedColour;
                 Hit = true;
                 ProperlyHit();
             }
@@ -53,7 +59,7 @@ public class Hold : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             else if (xAction.WasReleasedThisFrame())
             {
                 print($"X key released On {this.name}!");
-                spriteRenderer.color = originalColor;
+                spriteRenderer.color = originalColour;
                 Hit = false;
                 NotProperlyHit();
             }

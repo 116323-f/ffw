@@ -2,12 +2,12 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-public class PressButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class Release : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     InputAction xAction;
     InputAction zAction;
     private bool PointerEntered = false;
-    [SerializeField] private Color pressedColor = Color.red;
+    [SerializeField] private Color releasedColour;
     private SpriteRenderer spriteRenderer;
 
     private void Start()
@@ -37,18 +37,17 @@ public class PressButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         if (PointerEntered == true)
         {
-            if (xAction.WasPressedThisFrame() && xAction.IsPressed())
+            if (xAction.WasReleasedThisFrame())
             {
-                print($"X key properly Pressed On {this.name}!");
-                spriteRenderer.color = pressedColor;
+                print($"X key properly released On {this.name}!");
+                spriteRenderer.color = releasedColour;
             }
 
-            if (zAction.WasPressedThisFrame() && zAction.IsPressed())
+            if (zAction.WasReleasedThisFrame())
             {
-                print($"Z key properly Pressed On {this.name}!");
-                spriteRenderer.color = pressedColor;
+                print($"Z key properly released On {this.name}!");
+                spriteRenderer.color = releasedColour;
             }
-
         }
 
     }
