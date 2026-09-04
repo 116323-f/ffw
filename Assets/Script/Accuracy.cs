@@ -16,7 +16,7 @@ public class Accuracy : MonoBehaviour
         }
         else
         {
-            Debug.Log("Bad / Too Far!");
+            Debug.Log("Bad");
         }
     }
 }
