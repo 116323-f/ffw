@@ -529,10 +529,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HoldSlider
   sliderBall: {fileID: 84966574}
-  hitRadius: 1.5
+  hitRadius: 2
   HitCounter: 0
   PayPerSecond: 1
-  mainCam: {fileID: 0}
+  mainCam: {fileID: 1240021309}
 --- !u!61 &84966576
 BoxCollider2D:
   m_ObjectHideFlags: 0

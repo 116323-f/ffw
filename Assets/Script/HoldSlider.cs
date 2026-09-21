@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -35,8 +36,6 @@ public class HoldSlider : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        //what the method does
-
         print($"On Mouse Enter On {this.name}!");
         PointerEntered = true;
 
@@ -58,11 +57,36 @@ public class HoldSlider : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             {
                 //Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Mouse.current.position);
                 //worldPos = mainCam.ScreenToWorldPoint(Mouse.current.position);
-                //mouseWorldPos.z = 0f; 
+                //mouseWorldPos.x = 0f;
 
                 //float distance = Vector2.Distance(mouseWorldPos, sliderBall.position);
 
                 //isTracking = distance <= hitRadius;
+
+
+//                Vector2 mousePosition = mousePositionReference.action.ReadValue<Vector2>();
+//#else
+//        Vector2 mousePosition = Input.mousePosition;
+//#endif
+//                mousePosition.z = 20;
+//                mousePosition = camera.ScreenToWorldPoint(mousePosition);
+//                mousePosition.z = 0;
+//                mouseCursor.position = mousePosition;
+
+                Vector2 mousePosition = Camera.main.ScreenToViewportPoint(Mouse.current.position.ReadValue());
+                //Vector2 worldPos = mainCam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+                //mousePosition.x = 0f;
+                //mousePosition.y = 0f;
+
+                float distance = Vector2.Distance(mousePosition, sliderBall.position);
+
+                print("{distance}");
+
+                if (distance <= hitRadius)
+                {
+                    isTracking = true;
+                    PayAmount();
+                }
             }
 
             else if (xAction.WasReleasedThisFrame())
@@ -87,19 +111,20 @@ public class HoldSlider : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             }
         }
 
-        if (isTracking)
-        {
-            ProcessSliderTicks();
-        }
     }
 
-    void ProcessSliderTicks()
+    void PayAmount()
     {
-        HitCounter += Time.deltaTime;
-        // Convert seconds held into pay
-        Pay = (HitCounter / 2) * PayPerSecond;
+        if (isTracking == true)
+        {
+            print($"Hello I am tracking");
 
-        print($"Hit Counter: {HitCounter} seconds, Pay: {Pay}");
+            HitCounter += Time.deltaTime;
+            // Convert seconds held into pay
+            Pay = (HitCounter / 2) * PayPerSecond;
+
+            print($"Hit Counter: {HitCounter} seconds, Pay: {Pay}");
+        }
     }
 }
 
