@@ -1,4 +1,3 @@
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -6,11 +5,11 @@ using UnityEngine.InputSystem;
 public class HoldSlider : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public Transform sliderBall;
-    public float hitRadius = 1.5f;
+    public float hitRadius = 1f;
 
     InputAction xAction;
     InputAction zAction;
-    InputAction MousePosition;
+    [SerializeField] InputActionReference MousePosition;
     private bool PointerEntered = false;
 
     private HoldSlider script;
@@ -28,7 +27,6 @@ public class HoldSlider : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     {
         xAction = InputSystem.actions.FindAction("Xkey");
         zAction = InputSystem.actions.FindAction("Zkey");
-        MousePosition = InputSystem.actions.FindAction("MousePosition");
         script = GetComponent<HoldSlider>();
         script2 = GetComponent<HighScore>();
         script.enabled = true;
@@ -74,16 +72,16 @@ public class HoldSlider : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 //                mouseCursor.position = mousePosition;
 
                 Vector2 mousePosition = Camera.main.ScreenToViewportPoint(Mouse.current.position.ReadValue());
-                //Vector2 worldPos = mainCam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-                //mousePosition.x = 0f;
-                //mousePosition.y = 0f;
+                mousePosition.x = 0f;
+                mousePosition.y = 0f;
 
                 float distance = Vector2.Distance(mousePosition, sliderBall.position);
 
-                print("{distance}");
+                print($"{distance}");
 
                 if (distance <= hitRadius)
                 {
+                    print($"Hey why wont you work");
                     isTracking = true;
                     PayAmount();
                 }
@@ -99,7 +97,20 @@ public class HoldSlider : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
             if (zAction.IsPressed())
             {
+                Vector2 mousePos = MousePosition.action.ReadValue<Vector2>();
 
+                float distance = Vector2.Distance(mousePos, sliderBall.position);
+                
+                print($"Mouse Position: {mousePos}");
+                print($"Slider ball position: {sliderBall.position}");
+                print($"Distance: {distance}");
+
+                if (distance <= hitRadius)
+                {
+                    print($"Hey why won't you work");
+                    isTracking = true;
+                    PayAmount();
+                }
             }
 
             else if (zAction.WasReleasedThisFrame())
