@@ -11,7 +11,7 @@ public class HoldSlider : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     InputAction zAction;
     private bool PointerEntered = false;
 
-    private HoldSlider holdScoreScript;
+    private HoldSlider holdSliderScript;
     private HighScore highScoreScript;
 
     [SerializeField] private float HitCounter = 0f;
@@ -24,9 +24,9 @@ public class HoldSlider : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     {
         xAction = InputSystem.actions.FindAction("Xkey");
         zAction = InputSystem.actions.FindAction("Zkey");
-        holdScoreScript = GetComponent<HoldSlider>();
+        holdSliderScript = GetComponent<HoldSlider>();
         highScoreScript = GetComponent<HighScore>();
-        holdScoreScript.enabled = true;
+        holdSliderScript.enabled = true;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -41,7 +41,7 @@ public class HoldSlider : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         print($"On Mouse Exit On {this.name}!");
         PointerEntered = false;
         print($"Miss");
-        holdScoreScript.enabled = false;
+        holdSliderScript.enabled = false;
     }
 
     void Update()
@@ -58,7 +58,7 @@ public class HoldSlider : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             {
                 print($"X key released On {this.name}!");
                 print($"Miss");
-                holdScoreScript.enabled = false;
+                holdSliderScript.enabled = false;
             }
 
             if (zAction.IsPressed())
