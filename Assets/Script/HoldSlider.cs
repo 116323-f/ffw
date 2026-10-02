@@ -49,6 +49,7 @@ public class HoldSlider : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     void Update()
     {
+
         if (PointerEntered == true)
         {
             if (xAction.IsPressed())
@@ -71,20 +72,20 @@ public class HoldSlider : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 //                mousePosition.z = 0;
 //                mouseCursor.position = mousePosition;
 
-                Vector2 mousePosition = Camera.main.ScreenToViewportPoint(Mouse.current.position.ReadValue());
-                mousePosition.x = 0f;
-                mousePosition.y = 0f;
+                //Vector2 mousePosition = Camera.main.ScreenToViewportPoint(Mouse.current.position.ReadValue());
+                //mousePosition.x = 0f;
+                //mousePosition.y = 0f;
 
-                float distance = Vector2.Distance(mousePosition, sliderBall.position);
+                //float distance = Vector2.Distance(mousePosition, sliderBall.position);
 
-                print($"{distance}");
+                //print($"{distance}");
 
-                if (distance <= hitRadius)
-                {
-                    print($"Hey why wont you work");
-                    isTracking = true;
-                    PayAmount();
-                }
+                //if (distance <= hitRadius)
+                //{
+                //    print($"Hey why wont you work");
+                //    isTracking = true;
+                //    PayAmount();
+                //}
             }
 
             else if (xAction.WasReleasedThisFrame())
@@ -97,20 +98,20 @@ public class HoldSlider : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
             if (zAction.IsPressed())
             {
-                Vector2 mousePos = MousePosition.action.ReadValue<Vector2>();
+                //Vector2 mousePos = MousePosition.action.ReadValue<Vector2>();
 
-                float distance = Vector2.Distance(mousePos, sliderBall.position);
+                //float distance = Vector2.Distance(mousePos, sliderBall.position);
                 
-                print($"Mouse Position: {mousePos}");
-                print($"Slider ball position: {sliderBall.position}");
-                print($"Distance: {distance}");
+                //print($"Mouse Position: {mousePos}");
+                //print($"Slider ball position: {sliderBall.position}");
+                //print($"Distance: {distance}");
 
-                if (distance <= hitRadius)
-                {
-                    print($"Hey why won't you work");
-                    isTracking = true;
-                    PayAmount();
-                }
+                //if (distance <= hitRadius)
+                //{
+                //    print($"Hey why won't you work");
+                //    isTracking = true;
+                //    PayAmount();
+                //}
             }
 
             else if (zAction.WasReleasedThisFrame())
