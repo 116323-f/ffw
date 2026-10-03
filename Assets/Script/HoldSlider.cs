@@ -12,6 +12,7 @@ public class HoldSlider : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     private bool PointerEntered = false;
 
     private HoldSlider holdSliderScript;
+    private MovingPlatform movingPlatformScript;
     private HighScore highScoreScript;
 
     [SerializeField] private float HitCounter = 0f;
@@ -25,6 +26,7 @@ public class HoldSlider : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         xAction = InputSystem.actions.FindAction("Xkey");
         zAction = InputSystem.actions.FindAction("Zkey");
         holdSliderScript = GetComponent<HoldSlider>();
+        movingPlatformScript = GetComponent<MovingPlatform>();
         highScoreScript = GetComponent<HighScore>();
         holdSliderScript.enabled = true;
     }
@@ -86,6 +88,19 @@ public class HoldSlider : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             Pay = (HitCounter / 2) * PayPerSecond;
 
             print($"Hit Counter: {HitCounter} seconds, Pay: {Pay}");
+    }
+
+    public void StitchActive(bool isActive)
+    {
+        if (movingPlatformScript != null)
+        {
+            movingPlatformScript.enabled = isActive;
+        }
+
+        if (holdSliderScript != null)
+        {
+            holdSliderScript.enabled = isActive;
+        }
     }
 }
 

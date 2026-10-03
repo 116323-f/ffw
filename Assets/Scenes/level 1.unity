@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 84966575}
   - component: {fileID: 84966578}
   m_Layer: 0
-  m_Name: sliderBall
+  m_Name: sliderBall1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -548,7 +548,7 @@ GameObject:
   - component: {fileID: 161607939}
   - component: {fileID: 161607938}
   m_Layer: 0
-  m_Name: sliderBall
+  m_Name: sliderBall3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2991,7 +2991,7 @@ GameObject:
   - component: {fileID: 841711129}
   m_Layer: 0
   m_Name: Stitch1
-  m_TagString: Untagged
+  m_TagString: StitchComponent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4889,6 +4889,8 @@ MonoBehaviour:
   - {fileID: 841711127}
   - {fileID: 1406749333}
   - {fileID: 2072238884}
+  delayBetweenTriggers: 2
+  script: {fileID: 84966578}
 --- !u!1 &1302522652 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3403438661801939030, guid: c49a04b3faf8e9c4cbd4146eeb72f2f4, type: 3}
@@ -5169,7 +5171,7 @@ GameObject:
   - component: {fileID: 1406749334}
   m_Layer: 0
   m_Name: Stitch2
-  m_TagString: Untagged
+  m_TagString: StitchComponent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7964,7 +7966,7 @@ GameObject:
   - component: {fileID: 1906484133}
   - component: {fileID: 1906484132}
   m_Layer: 0
-  m_Name: sliderBall
+  m_Name: sliderBall2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9117,7 +9119,7 @@ GameObject:
   - component: {fileID: 2072238886}
   m_Layer: 0
   m_Name: Stitch3
-  m_TagString: Untagged
+  m_TagString: StitchComponent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
