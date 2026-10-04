@@ -59,4 +59,13 @@ public class Press : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     }
 
+    public void EnablePress()
+    {
+        enabled = true;
+    }
+
+    public void DisablePress()
+    {
+        enabled = false;
+    }
 }

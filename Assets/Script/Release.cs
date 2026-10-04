@@ -58,4 +58,13 @@ public class Release : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     }
 
+    public void EnableRelease()
+    {
+        enabled = true;
+    }
+
+    public void DisableRelease()
+    {
+        enabled = false;
+    }
 }

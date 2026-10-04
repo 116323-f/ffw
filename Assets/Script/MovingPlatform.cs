@@ -4,7 +4,7 @@ public class MovingPlatform : MonoBehaviour
 {
     public Transform posA, posB;
     public float speed;
-    Vector2 targetPos;
+    public Vector2 targetPos;
     private MovingPlatform movingPlatformScript;
     private HoldSlider holdSliderScript;
 
@@ -26,17 +26,14 @@ public class MovingPlatform : MonoBehaviour
         }
     }
 
-    public void StitchActive(bool isActive)
+    public void EnableMoving()
     {
-        if (movingPlatformScript != null)
-        {
-            movingPlatformScript.enabled = isActive;
-        }
+        enabled = true;
+    }
 
-        if (holdSliderScript != null)
-        {
-            holdSliderScript.enabled = isActive;
-        }
+    public void DisableMoving()
+    {
+        enabled = false;
     }
 }
 

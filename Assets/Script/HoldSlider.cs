@@ -90,17 +90,14 @@ public class HoldSlider : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             print($"Hit Counter: {HitCounter} seconds, Pay: {Pay}");
     }
 
-    public void StitchActive(bool isActive)
+    public void EnableHold()
     {
-        if (movingPlatformScript != null)
-        {
-            movingPlatformScript.enabled = isActive;
-        }
+        enabled = true;
+    }
 
-        if (holdSliderScript != null)
-        {
-            holdSliderScript.enabled = isActive;
-        }
+    public void DisableHold()
+    {
+        enabled = false;
     }
 }
 
