@@ -551,7 +551,6 @@ MonoBehaviour:
   posA: {fileID: 548433766}
   posB: {fileID: 1656101863}
   speed: 2
-  targetPos: {x: 0, y: 0}
 --- !u!114 &84966579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -765,7 +764,6 @@ MonoBehaviour:
   posA: {fileID: 998021205}
   posB: {fileID: 144737767}
   speed: 2
-  targetPos: {x: 0, y: 0}
 --- !u!114 &161607939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5276,7 +5274,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1300569881}
-  - component: {fileID: 1300569882}
   - component: {fileID: 1300569883}
   m_Layer: 0
   m_Name: StitchGroup1
@@ -5303,24 +5300,6 @@ Transform:
   - {fileID: 2072238885}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1300569882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1300569880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd1205cac72043a489c54654e0ff263b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StitchGroup
-  stitches:
-  - {fileID: 841711127}
-  - {fileID: 1406749333}
-  - {fileID: 2072238884}
-  delayBetweenTriggers: 2
-  script: {fileID: 84966578}
 --- !u!114 &1300569883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8463,7 +8442,6 @@ MonoBehaviour:
   posA: {fileID: 466866423}
   posB: {fileID: 341329833}
   speed: 2
-  targetPos: {x: 0, y: 0}
 --- !u!114 &1906484133
 MonoBehaviour:
   m_ObjectHideFlags: 0

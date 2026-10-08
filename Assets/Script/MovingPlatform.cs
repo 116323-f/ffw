@@ -2,44 +2,46 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
-    public Transform posA, posB;
-    public float speed;
-    Vector2 targetPos;
-    private MovingPlatform movingPlatformScript;
-    private HoldSlider holdSliderScript;
+    public Transform posA;
+    public Transform posB;
 
-    public void Start()
+    [SerializeField] private float speed = 2f;
+
+    private Vector3 targetPos;
+
+    private void Start()
     {
-        Debug.Log("MovingPlatform object: " + gameObject.name);
-        Debug.Log("posA: " + posA);
-        Debug.Log("posB: " + posB);
-
-        movingPlatformScript = GetComponent<MovingPlatform>();
-        holdSliderScript = GetComponent<HoldSlider>();
         targetPos = posB.position;
+
+        // Start at A
+        transform.position = posA.position;
+
+        // Wait for Timeline
+        enabled = false;
     }
 
     private void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
-        print($"Time active:{speed*Time.deltaTime}");
+        transform.position = Vector3.MoveTowards(
+            transform.position,
+            targetPos,
+            speed * Time.deltaTime
+        );
 
-        //once position is reached, disable script to stop moving
-        if (Vector2.Distance(transform.position, targetPos) < 0.001f)
+        // Stop when we reach B
+        if (Vector3.Distance(transform.position, targetPos) < 0.001f)
         {
-            print($"Overall time active:{speed * Time.deltaTime}");
-            holdSliderScript.enabled = false;
+            transform.position = targetPos;
+            enabled = false;
+
+            Debug.Log("Red square reached posB");
         }
     }
 
+    // Timeline calls this when the red square should start
     public void EnableMoving()
     {
         enabled = true;
-    }
-
-    public void DisableMoving()
-    {
-        enabled = false;
+        Debug.Log("Red square started moving");
     }
 }
-
