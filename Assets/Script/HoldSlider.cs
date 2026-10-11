@@ -4,14 +4,10 @@ using UnityEngine.InputSystem;
 
 public class HoldSlider : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public Transform sliderBall;
-    public float hitRadius = 1f;
-
     InputAction xAction;
     InputAction zAction;
     private bool PointerEntered = false;
 
-    private HoldSlider holdSliderScript;
     private MovingPlatform movingPlatformScript;
     private HighScore highScoreScript;
 
@@ -25,10 +21,9 @@ public class HoldSlider : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     {
         xAction = InputSystem.actions.FindAction("Xkey");
         zAction = InputSystem.actions.FindAction("Zkey");
-        holdSliderScript = GetComponent<HoldSlider>();
         movingPlatformScript = GetComponent<MovingPlatform>();
         highScoreScript = GetComponent<HighScore>();
-        holdSliderScript.enabled = true;
+        enabled = false;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -43,7 +38,7 @@ public class HoldSlider : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         print($"On Mouse Exit On {this.name}!");
         PointerEntered = false;
         print($"Miss");
-        holdSliderScript.enabled = false;
+        enabled = false;
     }
 
     void Update()
@@ -60,20 +55,19 @@ public class HoldSlider : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             {
                 print($"X key released On {this.name}!");
                 print($"Miss");
-                holdSliderScript.enabled = false;
+                enabled = false;
             }
 
             if (zAction.IsPressed())
             {
                 PayAmount();
-
             }
 
             else if (zAction.WasReleasedThisFrame())
             {
                 print($"Z key released On {this.name}!");
                 print($"Miss");
-                highScoreScript.enabled = false;
+                enabled = false;
             }
         }
 
@@ -81,8 +75,6 @@ public class HoldSlider : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     void PayAmount()
     {
-            print($"Hello I am tracking");
-
             HitCounter += Time.deltaTime;
             // Convert seconds held into pay
             Pay = (HitCounter / 2) * PayPerSecond;
@@ -95,9 +87,5 @@ public class HoldSlider : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         enabled = true;
     }
 
-    public void DisableHold()
-    {
-        enabled = false;
-    }
 }
 

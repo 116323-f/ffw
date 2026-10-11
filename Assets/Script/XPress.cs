@@ -2,23 +2,19 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-public class Release : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class XPress : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     InputAction xAction;
-    InputAction zAction;
     private bool PointerEntered = false;
-    [SerializeField] private Color releasedColour;
+    [SerializeField] private Color pressedColour;
     private SpriteRenderer spriteRenderer;
-
-    private Release script;
+    private float Pay = 0f;
 
     private void Start()
     {
         xAction = InputSystem.actions.FindAction("Xkey");
-        zAction = InputSystem.actions.FindAction("Zkey");
         spriteRenderer = GetComponent<SpriteRenderer>();
-        script = GetComponent<Release>();
-        script.enabled = true;
+        enabled = false;
     }
 
     //method status and name(what the method contains)
@@ -36,35 +32,29 @@ public class Release : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         print($"On Mouse Exit On {this.name}!");
         PointerEntered = false;
         print($"Miss");
-        script.enabled = false;
+        enabled = false;
     }
 
     void Update()
     {
         if (PointerEntered == true)
         {
-            if (xAction.WasReleasedThisFrame())
+            if (xAction.WasPressedThisFrame() && xAction.IsPressed())
             {
-                print($"X key properly released On {this.name}!");
-                spriteRenderer.color = releasedColour;
+                print($"X key properly Pressed On {this.name}!");
+                spriteRenderer.color = pressedColour;
+                Pay++;
+                print($"Pay: {Pay}");
+                enabled = false;
             }
 
-            if (zAction.WasReleasedThisFrame())
-            {
-                print($"Z key properly released On {this.name}!");
-                spriteRenderer.color = releasedColour;
-            }
         }
 
     }
 
-    public void EnableRelease()
+    public void EnablePress()
     {
         enabled = true;
-    }
-
-    public void DisableRelease()
-    {
-        enabled = false;
+        print($"XPress script enabled on {this.name}");
     }
 }

@@ -2,23 +2,19 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-public class Press : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class ZRelease : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    InputAction xAction;
     InputAction zAction;
     private bool PointerEntered = false;
-    [SerializeField] private Color pressedColour;
+    [SerializeField] private Color releasedColour;
     private SpriteRenderer spriteRenderer;
-
-    private Press script;
+    private float Pay = 0f;
 
     private void Start()
     {
-        xAction = InputSystem.actions.FindAction("Xkey");
         zAction = InputSystem.actions.FindAction("Zkey");
         spriteRenderer = GetComponent<SpriteRenderer>();
-        script = GetComponent<Press>();
-        script.enabled = true;
+        enabled = false;
     }
 
     //method status and name(what the method contains)
@@ -36,36 +32,30 @@ public class Press : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         print($"On Mouse Exit On {this.name}!");
         PointerEntered = false;
         print($"Miss");
-        script.enabled = false;
+        enabled = false;
     }
 
     void Update()
     {
         if (PointerEntered == true)
         {
-            if (xAction.WasPressedThisFrame() && xAction.IsPressed())
-            {
-                print($"X key properly Pressed On {this.name}!");
-                spriteRenderer.color = pressedColour;
-            }
 
-            if (zAction.WasPressedThisFrame() && zAction.IsPressed())
+            if (zAction.WasReleasedThisFrame())
             {
-                print($"Z key properly Pressed On {this.name}!");
-                spriteRenderer.color = pressedColour;
+                print($"Z key properly released On {this.name}!");
+                spriteRenderer.color = releasedColour;
+                Pay++;
+                print($"Pay: {Pay}");
+                enabled = false;
             }
-
         }
 
     }
 
-    public void EnablePress()
+    public void EnableRelease()
     {
         enabled = true;
+        print($"ZRelease script enabled on {this.name}");
     }
 
-    public void DisablePress()
-    {
-        enabled = false;
-    }
 }

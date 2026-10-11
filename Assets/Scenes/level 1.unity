@@ -421,13 +421,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 84966573}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8fd7d6a9ac9593b44bed3cd2cca58af6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HoldSlider
-  sliderBall: {fileID: 84966574}
-  hitRadius: 1.5
   HitCounter: 0
   PayPerSecond: 1
   mainCam: {fileID: 1240021309}
@@ -543,7 +541,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 84966573}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a67817fd1f6e3d49a582037f4ff1fa3, type: 3}
   m_Name: 
@@ -776,8 +774,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fd7d6a9ac9593b44bed3cd2cca58af6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HoldSlider
-  sliderBall: {fileID: 161607937}
-  hitRadius: 1.5
   HitCounter: 0
   PayPerSecond: 1
   mainCam: {fileID: 1240021309}
@@ -1211,7 +1207,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 5b5ea7b96fd6cc4469bb6af97bef2121, type: 3}
+  m_Resource: {fileID: 8300000, guid: 722a391cd4d62a348ac8195bd75edb92, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2467,12 +2463,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 676609396}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1e0f910cac83fe4e94eaa3fe3e06671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReleaseButton
-  releasedColour: {r: 0, g: 0, b: 0, a: 1}
+  releasedColour: {r: 0.9161792, g: 0, b: 1, a: 1}
 --- !u!58 &676609399
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2507,8 +2503,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.50000006
+  m_Offset: {x: 0.02, y: 0}
+  m_Radius: 0.57
 --- !u!212 &676609400
 SpriteRenderer:
   serializedVersion: 2
@@ -3251,8 +3247,8 @@ Transform:
   m_LocalScale: {x: 0.79843754, y: 0.7625, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 890239752}
   - {fileID: 676609397}
+  - {fileID: 890239752}
   - {fileID: 1526479187}
   - {fileID: 84966574}
   - {fileID: 548433766}
@@ -3466,7 +3462,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 890239751}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0de8f5ee50aee0a4384751716175d630, type: 3}
   m_Name: 
@@ -3507,7 +3503,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0.00000023841858, y: 0}
-  m_Radius: 0.50000006
+  m_Radius: 0.6
 --- !u!212 &890239755
 SpriteRenderer:
   serializedVersion: 2
@@ -8454,8 +8450,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fd7d6a9ac9593b44bed3cd2cca58af6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HoldSlider
-  sliderBall: {fileID: 1906484131}
-  hitRadius: 1.5
   HitCounter: 0
   PayPerSecond: 1
   mainCam: {fileID: 1240021309}
