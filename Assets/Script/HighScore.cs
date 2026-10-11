@@ -6,6 +6,7 @@ public class HighScore : MonoBehaviour
 {
     [SerializeField] public TextMeshProUGUI scoreText;
     [SerializeField] public TextMeshProUGUI highScoreText;
+    [SerializeField] private PayBar payBar;
 
     private float score;
     private float highScore;
@@ -25,6 +26,7 @@ public class HighScore : MonoBehaviour
     {
         score += amount;
         scoreText.text = "Pay: " + score;
+        payBar.UpdatePay(score);
 
         if (score > highScore)
         {

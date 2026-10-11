@@ -6,8 +6,11 @@ using DG.Tweening;
 
 public class PayBar : MonoBehaviour
 {
+    [SerializeField] private HighScore highScoreScript;
+
     private float maxPay = 20;
     private float currentPay = 0;
+    
     //[SerializeField] so able to assign through inspector panel
     //hold fill image
     [SerializeField] private Image payBarFill;
@@ -21,7 +24,7 @@ public class PayBar : MonoBehaviour
     }
 
     //update pay and pay teller to match real amount
-    // void = return nothing
+    //void = return nothing
     public void UpdatePay (float amount)
     {
         currentPay += amount;
@@ -36,6 +39,7 @@ public class PayBar : MonoBehaviour
     {
         //fill amount ranges from 0-1 so must divide to reach normalised value
         float targetFillAmount = currentPay / maxPay;
+        
         //set fill amount of fill image to target value
         payBarFill.DOFillAmount(targetFillAmount, fillSpeed);
         payBarFill.DOColor(colourGradient.Evaluate(targetFillAmount), fillSpeed);
