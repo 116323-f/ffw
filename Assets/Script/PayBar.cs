@@ -1,50 +1,58 @@
-using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 using DG.Tweening;
 
 public class PayBar : MonoBehaviour
 {
-    [SerializeField] private HighScore highScoreScript;
-
-    private float maxPay = 20;
-    private float currentPay = 0;
-    
-    //[SerializeField] so able to assign through inspector panel
-    //hold fill image
+    [SerializeField] private float maxPay = 20f;
     [SerializeField] private Image payBarFill;
     [SerializeField] private TextMeshProUGUI payTeller;
-    [SerializeField] private float fillSpeed;
+    [SerializeField] private float fillSpeed = 0.3f;
     [SerializeField] private Gradient colourGradient;
-    
+
+    private float currentPay = 0f;
+    private Tween fillTween;
+    private Tween colourTween;
+
     void Start()
     {
-        payTeller.text = "$" + currentPay;
+        UpdatePay(0f);
     }
 
-    //update pay and pay teller to match real amount
-    //void = return nothing
-    public void UpdatePay (float amount)
+    //match current score.
+    public void UpdatePay(float amount)
     {
-        currentPay += amount;
-        //set minimum to 0 and maximum to max pay
-        currentPay = Mathf.Clamp(currentPay, 0f, maxPay);
-        payTeller.text = "$" + currentPay;
+        currentPay = Mathf.Clamp(amount, 0f, maxPay);
+
+        if (payTeller != null)
+            payTeller.text = "$" + currentPay.ToString("0.00");
+
         UpdatePayBar();
     }
 
-    //Change fill amount value of fill image
     private void UpdatePayBar()
     {
-        //fill amount ranges from 0-1 so must divide to reach normalised value
+        if (payBarFill == null)
+            return;
+
         float targetFillAmount = currentPay / maxPay;
-        
-        //set fill amount of fill image to target value
-        payBarFill.DOFillAmount(targetFillAmount, fillSpeed);
-        payBarFill.DOColor(colourGradient.Evaluate(targetFillAmount), fillSpeed);
+        Color targetColour = colourGradient.Evaluate(targetFillAmount);
+
+        // Stop previous animation
+        fillTween?.Kill();
+        colourTween?.Kill();
+
+        fillTween = payBarFill
+            .DOFillAmount(targetFillAmount, fillSpeed);
+
+        colourTween = payBarFill
+            .DOColor(targetColour, fillSpeed);
     }
 
-
-
+    private void OnDestroy()
+    {
+        fillTween?.Kill();
+        colourTween?.Kill();
+    }
 }
