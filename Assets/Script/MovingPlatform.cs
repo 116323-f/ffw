@@ -8,7 +8,7 @@ public class MovingPlatform : MonoBehaviour
 
     [SerializeField] private float speed = 2f;
 
-    private HoldSlider holdSliderScript;
+    [SerializeField] private HoldSlider holdSliderScript;
 
     private void Start()
     {

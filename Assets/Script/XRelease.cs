@@ -8,7 +8,6 @@ public class XRelease : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     private bool PointerEntered = false;
     [SerializeField] private Color releasedColour;
     private SpriteRenderer spriteRenderer;
-    private float Pay = 0f;
 
     private void Start()
     {
@@ -43,8 +42,6 @@ public class XRelease : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             {
                 print($"X key properly released On {this.name}!");
                 spriteRenderer.color = releasedColour;
-                Pay++;
-                print($"Pay: {Pay}");
                 enabled = false;
             }
         }

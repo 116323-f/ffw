@@ -39,6 +39,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Outline
+    uniqueID: 3586400517
+    locked: 0
   - name: Hold
     uniqueID: 3150139613
     locked: 0
@@ -47,6 +50,9 @@ TagManager:
     locked: 0
   - name: PressRelease
     uniqueID: 4245768549
+    locked: 0
+  - name: ZX Text
+    uniqueID: 726409715
     locked: 0
   m_RenderingLayers:
   - Default

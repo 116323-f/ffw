@@ -8,8 +8,8 @@ public class HoldSlider : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     InputAction zAction;
     private bool PointerEntered = false;
 
-    private MovingPlatform movingPlatformScript;
-    private HighScore highScoreScript;
+    [SerializeField] private MovingPlatform movingPlatformScript;
+    [SerializeField] private HighScore highScoreScript;
 
     [SerializeField] private float HitCounter = 0f;
     [SerializeField] private float PayPerSecond = 1f;
@@ -80,6 +80,10 @@ public class HoldSlider : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             Pay = (HitCounter / 2) * PayPerSecond;
 
             print($"Hit Counter: {HitCounter} seconds, Pay: {Pay}");
+
+        // Update high score with pay
+        highScoreScript.AddScore(Pay);
+
     }
 
     public void EnableHold()

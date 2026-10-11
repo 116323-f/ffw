@@ -8,7 +8,6 @@ public class ZRelease : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     private bool PointerEntered = false;
     [SerializeField] private Color releasedColour;
     private SpriteRenderer spriteRenderer;
-    private float Pay = 0f;
 
     private void Start()
     {
@@ -44,8 +43,6 @@ public class ZRelease : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             {
                 print($"Z key properly released On {this.name}!");
                 spriteRenderer.color = releasedColour;
-                Pay++;
-                print($"Pay: {Pay}");
                 enabled = false;
             }
         }

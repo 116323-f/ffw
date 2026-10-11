@@ -8,7 +8,6 @@ public class ZPress : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     private bool PointerEntered = false;
     [SerializeField] private Color pressedColour;
     private SpriteRenderer spriteRenderer;
-    private float Pay = 0f;
 
     private void Start()
     {
@@ -43,8 +42,6 @@ public class ZPress : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             {
                 print($"Z key properly Pressed On {this.name}!");
                 spriteRenderer.color = pressedColour;
-                Pay++;
-                print($"Pay: {Pay}");
                 enabled = false;
             }
 
