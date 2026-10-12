@@ -19,7 +19,7 @@ public class AccuracyManager : MonoBehaviour
 
     void Start()
     {
-        accuracyText.text = "";
+        accuracyText.text = "Good";
         combo = 0;
         comboText.text = "COMBO: " + combo;
     }
