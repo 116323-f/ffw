@@ -39,8 +39,20 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
+  - name: BG
+    uniqueID: 94456137
+    locked: 0
+  - name: BG1
+    uniqueID: 842253587
+    locked: 0
+  - name: BG2
     uniqueID: 628390747
+    locked: 0
+  - name: BG3
+    uniqueID: 614704351
+    locked: 0
+  - name: Pattern
+    uniqueID: 133141805
     locked: 0
   - name: Outline
     uniqueID: 3586400517
